@@ -5,4 +5,5 @@
     <string name="intro_more">Learn More</string>
     <string name="intro_button">TRUN ON</string>
     <string name="intro_delay">NOT NOW</string>
+    <string name="texttest">textTest</string>
 </resources>

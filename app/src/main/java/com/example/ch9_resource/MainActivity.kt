@@ -1,5 +1,6 @@
 package com.example.ch9_resource
 
+import android.content.Context
 import android.content.Intent
 import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
@@ -8,14 +9,14 @@ import android.util.Log
 import com.example.ch9_resource.databinding.ActivityMainBinding
 import java.util.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
     private lateinit var binding: ActivityMainBinding
     private var localCode:String = "ko"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
-
+        Log.i("MIN","set onCreate")
         setContentView(binding.root)
         binding.radioButton.setOnClickListener {
             localCode = "ko"
@@ -25,24 +26,18 @@ class MainActivity : AppCompatActivity() {
             localCode = "en"
             setLocate()
         }
+
+        binding.button.setOnClickListener {
+            val nextIntent = Intent(this, Setting::class.java)
+            startActivity(nextIntent)
+        }
     }
 
-    fun setLocate(){
-
-        val locale = Locale(localCode)
-        Locale.setDefault(locale)
-
-        val config = Configuration()
-        config.setLocale(locale)
-
-        //baseContext.resources.updateConfiguration(config,baseContext.resources.displayMetrics)
-        baseContext.createConfigurationContext(config)
-
-        val intent = baseContext.packageManager.getLaunchIntentForPackage(baseContext.packageName)
-        intent!!.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
-        intent!!.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-        finish()
-        startActivity(intent)
-
+    private fun setLocate(){
+        LocaleWrapper.setLocale(localCode)
+        recreate()
     }
+
+
+
 }
