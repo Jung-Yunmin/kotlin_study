@@ -1,6 +1,15 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.Ch9_Resource" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <!--
+        Theme.MaterialComponents.DayNight.NoActionBar : 액션바 숨기기
+    -->
+    <style name="Theme.Ch9_Resource" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- colorPrimary : 액션바와 버튼의 배경색
+             colorSecondary : 텍스트 뷰의 링크, 체크박스나 라디오 버튼이 체크되었을 때, 스위치가 켬 상태, 플로팅 액션 버튼의 배경색 등  활성 상태를 표시
+             statusBarColor : 상태바의 배경색
+             colorOnPrimary , colorOnSecondary : colorPrimary, colorSecondary의 전경색(글자색)
+             colorPrimaryVariant, colorSecondaryVariant : 그림자의 색상 -->
+
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
@@ -12,5 +21,10 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+    </style>
+
+    <style name="ThemeOverlay.Ch9_Resource.FullscreenContainer" parent="">
+        <item name="fullscreenBackgroundColor">@color/light_blue_600</item>
+        <item name="fullscreenTextColor">@color/light_blue_A200</item>
     </style>
 </resources>

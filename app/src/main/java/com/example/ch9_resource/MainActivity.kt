@@ -18,6 +18,8 @@ class MainActivity : BaseActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         Log.i("MIN","set onCreate")
         setContentView(binding.root)
+
+
         binding.radioButton.setOnClickListener {
             localCode = "ko"
             setLocate()
@@ -28,7 +30,10 @@ class MainActivity : BaseActivity() {
         }
 
         binding.button.setOnClickListener {
-            val nextIntent = Intent(this, Setting::class.java)
+            //val nextIntent = Intent(this, Setting::class.java)
+            //val nextIntent = Intent(this, RecyclerTest::class.java)
+            //val nextIntent = Intent(this, ViewPager2Test::class.java)
+            val nextIntent = Intent(this, BottomMenu::class.java)
             startActivity(nextIntent)
         }
     }

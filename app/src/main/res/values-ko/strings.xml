@@ -7,4 +7,7 @@
     <string name="intro_button">설정</string>
     <string name="intro_delay">나중에 하기</string>
     <string name="texttest">텍스트 테스트</string>
+    <string name="first_fragment">첫번째 플래그먼트 입니다.</string>
+    <string name="two_fragment">두번째 플래그먼트 입니다.</string>
+    <string name="three_fragment">세번째 플래그먼트 입니다.</string>
 </resources>

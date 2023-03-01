@@ -6,4 +6,8 @@
     <string name="intro_button">TRUN ON</string>
     <string name="intro_delay">NOT NOW</string>
     <string name="texttest">textTest</string>
+    <string name="first_fragment">first_fragment</string>
+    <string name="two_fragment">two_fragment</string>
+    <string name="three_fragment">three_fragment</string>
+    <!-- TODO: Remove or change this placeholder text -->
 </resources>
